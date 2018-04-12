@@ -1,0 +1,120 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="clr-namespace:App1"
+             x:Class="App1.MainPage"   
+            Style="{StaticResource ContentPageStyle}" >
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <Style x:Key="ContentPageStyle" TargetType="ContentPage">
+                <Setter Property="Title" Value="请车"/> 
+            </Style>
+        </ResourceDictionary>
+    </ContentPage.Resources>
+    <ContentPage.ToolbarItems BarBackgroundColor="Color.Red">
+        <ToolbarItem Name="personinfo" Icon="top_person.png" Priority="-1" Order="Primary"/>
+        <ToolbarItem Name="messageinfo" Icon="top_message.png" Priority="1" Order="Primary"/>
+    </ContentPage.ToolbarItems>
+    <ContentPage.Content>
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="20"></RowDefinition>
+                <RowDefinition Height="65"></RowDefinition>
+                <RowDefinition Height="300"></RowDefinition>
+                <RowDefinition></RowDefinition>
+            </Grid.RowDefinitions>
+            <RelativeLayout Grid.Row="1">
+                <StackLayout HorizontalOptions="Center" x:Name="trainslayout"
+        RelativeLayout.YConstraint="{ConstraintExpression Type=RelativeToParent,Property=Height,Factor=0,Constant=0}"
+        RelativeLayout.WidthConstraint="{ConstraintExpression Type=RelativeToParent,Property=Width,Factor=1,Constant=0}"
+        RelativeLayout.HeightConstraint="{ConstraintExpression Type=RelativeToParent,Property=Height,Factor=1,Constant=0}">
+                    <Image Source="icon_bgtrain.png" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand"/>
+                </StackLayout>
+                <StackLayout Orientation="Horizontal" RelativeLayout.YConstraint="{ConstraintExpression Type=RelativeToView,
+            ElementName=trainslayout,Property=Y,Factor=1,Constant=-11}"
+        RelativeLayout.XConstraint="{ConstraintExpression Type=RelativeToView,
+            ElementName=trainslayout,Property=X,Factor=1,Constant=-14}"
+        RelativeLayout.WidthConstraint="{ConstraintExpression
+            Type=RelativeToParent,Property=Width,Factor=1,Constant=0}"
+        RelativeLayout.HeightConstraint="{ConstraintExpression
+            Type=RelativeToParent,Property=Height,Factor=1,Constant=0}" >
+                    <Image Source="icon_titlebg.png" Scale="0.8"></Image>
+                </StackLayout>
+                <StackLayout Orientation="Horizontal" RelativeLayout.YConstraint="{ConstraintExpression Type=RelativeToView,
+            ElementName=trainslayout,Property=Y,Factor=1,Constant=10}"
+        RelativeLayout.XConstraint="{ConstraintExpression Type=RelativeToView,
+            ElementName=trainslayout,Property=X,Factor=1,Constant=25}"
+        RelativeLayout.WidthConstraint="{ConstraintExpression
+            Type=RelativeToParent,Property=Width,Factor=1,Constant=0}"
+        RelativeLayout.HeightConstraint="{ConstraintExpression
+            Type=RelativeToParent,Property=Height,Factor=1,Constant=0}" >
+                    <Label Text="铁运" FontSize="Large"  TextColor="White"></Label>
+                </StackLayout>
+                <StackLayout Orientation="Horizontal"  HorizontalOptions="CenterAndExpand"  VerticalOptions="CenterAndExpand" RelativeLayout.YConstraint="{ConstraintExpression Type=RelativeToView,
+            ElementName=trainslayout,Property=Y,Factor=1,Constant=50}"
+        RelativeLayout.XConstraint="{ConstraintExpression Type=RelativeToView,
+            ElementName=trainslayout,Property=X,Factor=1,Constant=-25}"
+        RelativeLayout.WidthConstraint="{ConstraintExpression
+            Type=RelativeToParent,Property=Width,Factor=1,Constant=0}"
+        RelativeLayout.HeightConstraint="{ConstraintExpression
+            Type=RelativeToParent,Property=Height,Factor=1,Constant=0}" >
+                    <Image Source="icon_train01.png" Scale="1" Margin="60,0,0,0"></Image>
+                    <Image Source="icon_train02.png" Scale="1" Margin="30,0,0,0"></Image>
+                    <Image Source="icon_train03.png" Scale="1" Margin="30,0,0,0"></Image>
+                </StackLayout>
+                <StackLayout Orientation="Horizontal"  VerticalOptions="CenterAndExpand" RelativeLayout.YConstraint="{ConstraintExpression Type=RelativeToView,
+            ElementName=trainslayout,Property=Y,Factor=1,Constant=0}"
+        RelativeLayout.XConstraint="{ConstraintExpression Type=RelativeToView,
+            ElementName=trainslayout,Property=X,Factor=1,Constant=-6}"
+        RelativeLayout.WidthConstraint="{ConstraintExpression
+            Type=RelativeToParent,Property=Width,Factor=1,Constant=0}"
+        RelativeLayout.HeightConstraint="{ConstraintExpression
+            Type=RelativeToParent,Property=Height,Factor=1,Constant=185}" >
+                    <Label Text="空装" FontSize="Medium" TextColor="White" Margin="70,0,0,0"></Label>
+                    <Label Text="空发" FontSize="Medium" TextColor="White" Margin="65,0,0,0"></Label>
+                    <Label Text="重发" FontSize="Medium" TextColor="White" Margin="64,0,0,0"></Label>
+                </StackLayout>
+            </RelativeLayout>
+            <RelativeLayout Grid.Row="2">
+                <StackLayout HorizontalOptions="Center" x:Name="groadlayout"
+        RelativeLayout.YConstraint="{ConstraintExpression Type=RelativeToParent,Property=Height,Factor=0,Constant=0}"
+        RelativeLayout.WidthConstraint="{ConstraintExpression Type=RelativeToParent,Property=Width,Factor=1,Constant=0}"
+        RelativeLayout.HeightConstraint="{ConstraintExpression Type=RelativeToParent,Property=Height,Factor=1,Constant=0}">
+                    <Image Source="icon_bgroad.png" HorizontalOptions="FillAndExpand"  VerticalOptions="FillAndExpand"/>
+                </StackLayout>
+                <StackLayout Orientation="Horizontal" RelativeLayout.YConstraint="{ConstraintExpression Type=RelativeToView,
+            ElementName=groadlayout,Property=Y,Factor=1,Constant=-47}"
+        RelativeLayout.XConstraint="{ConstraintExpression Type=RelativeToView,
+            ElementName=groadlayout,Property=X,Factor=1,Constant=-14}"
+        RelativeLayout.WidthConstraint="{ConstraintExpression
+            Type=RelativeToView,ElementName=groadlayout,Property=Width,Factor=1,Constant=0}"
+        RelativeLayout.HeightConstraint="{ConstraintExpression
+            Type=RelativeToView,ElementName=groadlayout,Property=Height,Factor=1,Constant=0}" >
+                    <Image Source="icon_titlebg.png" Scale="0.8"></Image>
+                </StackLayout>
+
+                <StackLayout Orientation="Horizontal" RelativeLayout.YConstraint="{ConstraintExpression Type=RelativeToView,
+            ElementName=groadlayout,Property=Y,Factor=1,Constant=90}"
+        RelativeLayout.XConstraint="{ConstraintExpression Type=RelativeToView,
+            ElementName=groadlayout,Property=X,Factor=1,Constant=25}"
+        RelativeLayout.WidthConstraint="{ConstraintExpression
+            Type=RelativeToView,ElementName=groadlayout,Property=Width,Factor=1,Constant=0}"
+        RelativeLayout.HeightConstraint="{ConstraintExpression
+            Type=RelativeToView,ElementName=groadlayout,Property=Height,Factor=1,Constant=0}" >
+                    <Label Text="陆运" FontSize="Large"  TextColor="White"></Label>
+                </StackLayout>
+
+                <StackLayout Orientation="Horizontal"  HorizontalOptions="CenterAndExpand"  VerticalOptions="CenterAndExpand" RelativeLayout.YConstraint="{ConstraintExpression Type=RelativeToView,
+            ElementName=groadlayout,Property=Y,Factor=1,Constant=0}"
+        RelativeLayout.XConstraint="{ConstraintExpression Type=RelativeToView,
+            ElementName=groadlayout,Property=X,Factor=1,Constant=0}"
+        RelativeLayout.WidthConstraint="{ConstraintExpression
+            Type=RelativeToView,ElementName=groadlayout,Property=Width,Factor=1,Constant=0}"
+        RelativeLayout.HeightConstraint="{ConstraintExpression
+            Type=RelativeToView,ElementName=groadlayout,Property=Height,Factor=1,Constant=0}" >
+                    <Image Source="icon_trainarrow.png"  Scale="0.7"></Image>
+                </StackLayout>
+            </RelativeLayout>
+        </Grid>
+    </ContentPage.Content>
+</ContentPage>  
